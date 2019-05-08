@@ -10,6 +10,9 @@ assignees: ''
 Hi there, 
 This is CPChain team. Note that this is for bug report. If you are requesting a feature, please select *Feature Request* template. 
 
+**Where does the bug occur?**
+[e.g. the chain, the wallet, the console or the explorer]
+
 **Describe the bug**
 A clear and concise description of what the bug is.
 
