@@ -13,12 +13,15 @@ This is CPChain team. Note that this is for bug report. If you are requesting a 
 **Where does the bug occur?**
 [e.g. the chain, the wallet, the console or the explorer]
 
+**What is your wallet address and your balance?**
+If it is too private to answer, you can omit it. 
+
 **Describe the bug**
-A clear and concise description of what the bug is.
+A clear and concise description of what the bug is. 
+If you are setting smart contract or sending transactions, make sure explicit all details including gas price. 
 
 **To Reproduce**
 Steps to reproduce the behavior, and the commands you use.
-
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
