@@ -24,7 +24,8 @@ Proxy Register Contract
 RPT Contract
 ***************
 
-   RPT (abbreviated from reputation) contract calculates RNode's reputation value. It is a core component of RNode ecosystem.
+   RPT (abbreviated from reputation) contract calculates RNode's reputation value.
+   It is a core component of RNode ecosystem.
    `RNode <https://cpchain.io/rnode/>`_ is the detail of the RNode ecosystem.
    Reputation value consists of 5 dimensions,
    **Account Balance (AB)**,
@@ -47,7 +48,8 @@ RPT Contract
 Campaign Contract
 ********************
 
-   A campaign contract is called once a user starts mining. If its passes the test of admission contract,
+   A campaign contract is called once a user starts mining.
+   If its passes the test of admission contract,
    it is registered as an RNode by the campaign contract.
    Furthermore, given the condition that RPT value of  the user is one of the top 21 RNodes,
    it is qualified to claim campaign aiming to become one of the committee members.
@@ -58,7 +60,8 @@ Campaign Contract
    ``claimCampaign()``: this function is called when a user claims a campaign.
    A fee paid in cpc is required by campaign contract as a deposit.
 
-   ``quitCampaign()``: this function is called after a user quits the campaign. It is about to get its deposit back via this function.
+   ``quitCampaign()``: this function is called after a user quits the campaign.
+   It is about to get its deposit back via this function.
 
    ``punishCandidate()``: this function can only be invoked by contract deployer.
    The deployer can detain the RNode's deposit if it observes any malicious behavior from an RNode.
@@ -70,7 +73,8 @@ Admission Contract
 
    Admission contract is called by campaign contract to verify whether
    the candidates' CPU and memory resources match the requirements of mining.
-   Two functions ``updateCPUDifficulty()`` and ``updateMemoryDifficulty()`` are implemented to fulfil this verification purpose.
+   Two functions ``updateCPUDifficulty()`` and ``updateMemoryDifficulty()``
+   are implemented to fulfil this verification purpose.
 
 PDash Contract
 ****************
@@ -120,14 +124,16 @@ User Scenario Steps
 Consensus
 #####################
 
-The consensus in LBFT 2.0 is determined by two two committees: **Validators Committee** and **Proposers Committee**,
-which leads to a bipartite committee structure.
+The consensus in LBFT 2.0 is determined by two two committees:
+**Validators Committee** and **Proposers Committee**,
+which together lead to a bipartite committee structure.
 Proposers and validators, just as their names imply,
 take the responsibility of proposing and validating blocks respectively.
 
 The consensus process works in a finite state machine which consists of five states
 **idle**, **prepare**, **commit**, **impeach prepare** and **impeach commit**.
-The former three states are designed for normal cases, and the rest are specializing in handling abnormal cases.
+The former three states are designed for normal cases,
+and the rest, named as impeachment, are specializing in handling abnormal cases.
 
 Due to the lack of space in this page, we explicate LBFT 2.0 in :ref:`consensus`
 
@@ -191,11 +197,16 @@ And the total score is calculated as:
 0.15\times DC +
 0.1\times BM`
 
+.. note::
+
+    All scores for each dimension are evaluated within to a time window,
+    which is latest 100 blocks.
+    Data outside this window are no longer taken into consideration.
 
 Account Balance
 ++++++++++++++++++
 
-A account balance score is granted to an RNode
+A *account balance* score is granted to an RNode
 according to its account balance percentile among all RNode addresses
 (excluding CPChain Foundation and Exchange addresses).
 Score percentiles are demonstrated below.
@@ -222,15 +233,34 @@ Score percentiles are demonstrated below.
 Transaction
 ++++++++++++++
 
-*Transactions* here are defined as
-transactions that exchange tokens for data product.
-The definition of *Transactions* can be expanded as the of CPChain ecosystem develops.
+*Transactions* here include
+all transactions sent by a given user.
+The definition of *transactions* can be expanded as the of CPChain ecosystem develops.
 
-Transaction score is evaluated by all *transactions* statistics.
-For each *transaction* record a node finishes,
+TX score is evaluated by all *transactions* statistics.
+Since the distribution of transactions can follow
+a long tail distribution or power laws,
+we use the following percentiles to normalize TX score.
 
-1. 5 points is granted to the node.
-#. The full score is 100 points.
++--------------+--------------+
+| Percentile   |  Score (TX)  |
++==============+==============+
+|    98%       |   100        |
++--------------+--------------+
+|    95%       |    90        |
++--------------+--------------+
+|    85%       |    80        |
++--------------+--------------+
+|    65%       |    70        |
++--------------+--------------+
+|    40%       |    60        |
++--------------+--------------+
+|    20%       |    40        |
++--------------+--------------+
+|     0%       |    20        |
++--------------+--------------+
+
+
 
 Proxy Reputation
 ++++++++++++++++++
@@ -265,11 +295,30 @@ Blockchain Maintenance
 
 Blockchain Maintenance score is calculated
 given a node's contribution in proposing a certain block.
-For a successfully inserted block,
 
-1. Its proposer is rewarded 100 points.
-#. Other committee members are rewarded 80 points each.
-#. The rest RNodes are rewarded 60 points each.
+In detail, it is evaluated given the following percentile
+of number of proposed blocks, similar to `Transaction`_ and `Account Balance`_.
+
++--------------+--------------+
+| Percentile   |  Score (BM)  |
++==============+==============+
+|    98%       |   100        |
++--------------+--------------+
+|    95%       |    90        |
++--------------+--------------+
+|    85%       |    80        |
++--------------+--------------+
+|    65%       |    70        |
++--------------+--------------+
+|    40%       |    60        |
++--------------+--------------+
+|    20%       |    40        |
++--------------+--------------+
+|     0%       |    20        |
++--------------+--------------+
+
+
+
 
 Hardware Specification
 ***************************
@@ -342,7 +391,7 @@ When a fundraising ends, the following rules are applied:
 #. All nodes with deposit in this lock-up period receive their reward from the pool.
 
 The reward for a certain node from the pool is proportional to its deposit in a season.
-In other word, the basic reward is calculated as :math:`5000000\cdot d/D`, where :math:`d` is deposit of a certain node,
+In other word, the basic reward is calculated as :math:`5000000 \cdot d/D`, where :math:`d` is deposit of a certain node,
 and :math:`D` is the total value of coins in the reward pool.
 
 
@@ -499,7 +548,6 @@ verifying this transaction at the cost of their computing overheads,
 which should be rewarded with transaction fee.
 In addition, this mechanism avoids malicious nodes
 occupying computing capability of the chain at no cost.
-
 
 
 
