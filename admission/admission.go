@@ -5,6 +5,7 @@ import (
 	"errors"
 	"math"
 	"math/big"
+	"net"
 	"reflect"
 	"sync"
 	"sync/atomic"
@@ -17,8 +18,9 @@ import (
 	"bitbucket.org/cpchain/chain/configs"
 	"bitbucket.org/cpchain/chain/consensus"
 	"bitbucket.org/cpchain/chain/contracts/dpor/admission"
+	campaign "bitbucket.org/cpchain/chain/contracts/dpor/campaign"
 	contracts "bitbucket.org/cpchain/chain/contracts/dpor/campaign/tests"
-	campaign "bitbucket.org/cpchain/chain/contracts/dpor/campaign4"
+	"bitbucket.org/cpchain/chain/contracts/dpor/network"
 	rnode "bitbucket.org/cpchain/chain/contracts/dpor/rnode"
 	"github.com/ethereum/go-ethereum/common"
 )
@@ -52,6 +54,7 @@ var (
 	errNotRNode       = errors.New("it is not RNode, not able to participate campaign")
 	errLockedPeriod   = errors.New("the period is locked, cannot invest now")
 	errNoEnoughMoney  = errors.New("money is not enough to become RNode")
+	errBadNetwork     = errors.New("now the network status is bad")
 )
 
 // AdmissionControl implements admission control functionality.
@@ -63,6 +66,9 @@ type AdmissionControl struct {
 	admissionContractAddr common.Address
 	campaignContractAddr  common.Address
 	rNodeContractAddr     common.Address
+	networkContractAddr   common.Address
+
+	checkNetworkStatus bool
 
 	mutex      sync.RWMutex
 	wg         *sync.WaitGroup
@@ -80,19 +86,122 @@ type AdmissionControl struct {
 
 // NewAdmissionControl returns a new Control instance.
 func NewAdmissionControl(chain consensus.ChainReader, address common.Address, admissionContractAddr common.Address,
-	campaignContractAddr common.Address, rNodeContractAddr common.Address) *AdmissionControl {
+	campaignContractAddr common.Address, rNodeContractAddr common.Address, networkContractAddr common.Address) *AdmissionControl {
 	return &AdmissionControl{
 		chain:                 chain,
 		address:               address,
 		admissionContractAddr: admissionContractAddr,
 		campaignContractAddr:  campaignContractAddr,
 		rNodeContractAddr:     rNodeContractAddr,
+		networkContractAddr:   networkContractAddr,
 		status:                AcIdle,
+
+		checkNetworkStatus: true,
 	}
+}
+
+func (ac *AdmissionControl) IgnoreNetworkCheck() {
+	ac.mutex.Lock()
+	defer ac.mutex.Unlock()
+
+	ac.checkNetworkStatus = false
+}
+
+func (ac *AdmissionControl) CheckNetworkStatus() bool {
+	ac.mutex.RLock()
+	localCheck := ac.checkNetworkStatus
+	ac.mutex.RUnlock()
+
+	// TODO: read parameters from contract
+	host := "www.microsoft.com:443"
+	count := 4
+	timeout := 300
+	check := true
+	gap := 100
+
+	// create contract instance
+	networkCheckerInstance, err := network.NewNetwork(ac.networkContractAddr, ac.contractBackend)
+	if err != nil {
+		log.Error("failed to create new network checker instance", "err", err)
+		return false
+	}
+
+	chck, err := networkCheckerInstance.Open(nil)
+	if err != nil {
+		log.Error("failed to get dial open flag from network checker instance", "err", err)
+		return false
+	}
+	check = chck
+
+	// if check flag is false, return true
+	if !check || !localCheck {
+		return true
+	}
+
+	// read parameters from contract
+	host, err = networkCheckerInstance.Host(nil)
+	if err != nil {
+		log.Error("failed to get host from network checker instance", "err", err)
+		return false
+	}
+
+	cnt, err := networkCheckerInstance.Count(nil)
+	if err != nil {
+		log.Error("failed to get dial count from network checker instance", "err", err)
+		return false
+	}
+
+	count = int(cnt.Uint64())
+
+	tmout, err := networkCheckerInstance.Timeout(nil)
+	if err != nil {
+		log.Error("failed to get dial count from network checker instance", "err", err)
+		return false
+	}
+	timeout = int(tmout.Uint64())
+
+	gp, err := networkCheckerInstance.Gap(nil)
+	if err != nil {
+		log.Error("failed to get dial gap from network checker instance", "err", err)
+		return false
+	}
+	gap = int(gp.Uint64())
+
+	// do the dial
+	if ok, err := checkNetworkStatus(host, count, timeout, gap); !ok {
+		log.Warn("Failed to check network status, try to dial", "host", host, "count", count, "timeout", timeout, "gap", gap, "err", err)
+		return false
+	}
+
+	return true
+}
+
+func checkNetworkStatus(host string, count int, timeout int, gap int) (bool, error) {
+
+	timeoutD := time.Duration(time.Duration(timeout) * time.Millisecond)
+	gapD := time.Duration(time.Duration(gap) * time.Millisecond)
+
+	for i := 0; i < count; i++ {
+		conn, err := net.DialTimeout("tcp", host, timeoutD)
+		if err != nil {
+			return false, err
+		}
+		log.Debug("dialed host to check network status", "host", host, "count", count, "timeout", timeout, "gap", gap)
+		conn.Close()
+		time.Sleep(gapD)
+	}
+	return true, nil
 }
 
 // Campaign starts running all the proof work to generate the campaign information and waits all proof work done, send msg
 func (ac *AdmissionControl) Campaign(terms uint64) error {
+
+	// check network status before continue, this is not a hard restriction
+	// one can ignore this by setting `IgnoreNetworkStatusCheck' == true in configs/general.go
+	if !ac.CheckNetworkStatus() {
+		return errBadNetwork
+	}
+
 	log.Info("Start campaign for dpor proposers committee")
 	ac.mutex.Lock()
 	defer ac.mutex.Unlock()
@@ -140,6 +249,13 @@ func (ac *AdmissionControl) IsRNode() (bool, error) {
 }
 
 func (ac *AdmissionControl) FundForRNode() error {
+
+	// check network status before continue, this is not a hard restriction
+	// one can ignore this by setting `IgnoreNetworkStatusCheck' == true in configs/general.go
+	if !ac.CheckNetworkStatus() {
+		return errBadNetwork
+	}
+
 	log.Debug("Start funding for becoming RNode")
 	ac.mutex.Lock()
 	defer ac.mutex.Unlock()
@@ -166,12 +282,19 @@ func (ac *AdmissionControl) FundForRNode() error {
 		return nil
 	}
 
-	minRnodeFund := new(big.Int).Mul(big.NewInt(configs.RNodeMinFundReq), big.NewInt(configs.Cpc))
+	minRnodeFund, err := rNodeContract.RnodeThreshold(nil)
+	if err != nil {
+		return err
+	}
+
 	balance, _ := ac.contractBackend.BalanceAt(context.Background(), ac.address, nil)
 	if balance.Cmp(minRnodeFund) >= 0 {
 		transactOpts := bind.NewKeyedTransactor(ac.key.PrivateKey)
 		transactOpts.Value = minRnodeFund
-		tx, err := rNodeContract.JoinRnode(transactOpts)
+		tx, err := rNodeContract.JoinRnode(
+			transactOpts,
+			new(big.Int).SetInt64(configs.RnodeVersion),
+		)
 		if err != nil {
 			log.Info("encounter error when funding deposit for node to become candidate", "error", err)
 			return err

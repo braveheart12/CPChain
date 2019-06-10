@@ -203,18 +203,18 @@ func (_AdmissionInterface *AdmissionInterfaceCallerSession) Verify(_cpuNonce uin
 }
 
 // CampaignABI is the input ABI used to generate the binding from.
-const CampaignABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"termLen\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_numOfCampaign\",\"type\":\"uint256\"},{\"name\":\"_cpuNonce\",\"type\":\"uint64\"},{\"name\":\"_cpuBlockNumber\",\"type\":\"uint256\"},{\"name\":\"_memoryNonce\",\"type\":\"uint64\"},{\"name\":\"_memoryBlockNumber\",\"type\":\"uint256\"}],\"name\":\"claimCampaign\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_termIdx\",\"type\":\"uint256\"}],\"name\":\"candidatesOf\",\"outputs\":[{\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"termIdx\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"minNoc\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"numPerRound\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setRewardInterface\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"viewLen\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_maxNoc\",\"type\":\"uint256\"}],\"name\":\"updateMaxNoc\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_minNoc\",\"type\":\"uint256\"}],\"name\":\"updateMinNoc\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setAdmissionAddr\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_termLen\",\"type\":\"uint256\"}],\"name\":\"updateTermLen\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_viewLen\",\"type\":\"uint256\"}],\"name\":\"updateViewLen\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_candidate\",\"type\":\"address\"}],\"name\":\"candidateInfoOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"},{\"name\":\"\",\"type\":\"uint256\"},{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"maxNoc\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"updateCandidateStatus\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_admissionAddr\",\"type\":\"address\"},{\"name\":\"_rewardAddr\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"candidate\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"startTermIdx\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"stopTermIdx\",\"type\":\"uint256\"}],\"name\":\"ClaimCampaign\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"candidate\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"payback\",\"type\":\"uint256\"}],\"name\":\"QuitCampaign\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"ViewChange\",\"type\":\"event\"}]"
+const CampaignABI = "[{\"constant\":true,\"inputs\":[],\"name\":\"termLen\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_termIdx\",\"type\":\"uint256\"}],\"name\":\"candidatesOf\",\"outputs\":[{\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_termsToCampaign\",\"type\":\"uint256\"},{\"name\":\"_cpuNonce\",\"type\":\"uint64\"},{\"name\":\"_cpuBlockNumber\",\"type\":\"uint256\"},{\"name\":\"_memoryNonce\",\"type\":\"uint64\"},{\"name\":\"_memoryBlockNumber\",\"type\":\"uint256\"},{\"name\":\"version\",\"type\":\"uint256\"}],\"name\":\"claimCampaign\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"termIdx\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"minNoc\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"numPerRound\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"viewLen\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_supportedVersion\",\"type\":\"uint256\"}],\"name\":\"updateSupportedVersion\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_maxNoc\",\"type\":\"uint256\"}],\"name\":\"updateMaxNoc\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_minNoc\",\"type\":\"uint256\"}],\"name\":\"updateMinNoc\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"acceptableBlocks\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setAdmissionAddr\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_termLen\",\"type\":\"uint256\"}],\"name\":\"updateTermLen\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_viewLen\",\"type\":\"uint256\"}],\"name\":\"updateViewLen\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"supportedVersion\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_acceptableBlocks\",\"type\":\"uint256\"}],\"name\":\"updateAcceptableBlocks\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"_candidate\",\"type\":\"address\"}],\"name\":\"candidateInfoOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"},{\"name\":\"\",\"type\":\"uint256\"},{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"maxNoc\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"setRnodeInterface\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_admissionAddr\",\"type\":\"address\"},{\"name\":\"_rnodeAddr\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"candidate\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"startTermIdx\",\"type\":\"uint256\"},{\"indexed\":false,\"name\":\"stopTermIdx\",\"type\":\"uint256\"}],\"name\":\"ClaimCampaign\",\"type\":\"event\"}]"
 
 // CampaignBin is the compiled bytecode used for deploying new contracts.
-const CampaignBin = `0x6080604052600060015560036002556004600355600254600354026004556001600555600a600655600060075534801561003857600080fd5b50604051604080610b6283398101604052805160209091015160008054600160a060020a03199081163317909155600a8054600160a060020a03948516908316179055600b8054939092169216919091179055610ac88061009a6000396000f3006080604052600436106100e55763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166314b5980e81146100e757806314b90a021461010e5780631984ab0014610133578063358057261461019b5780633a713e37146101b05780634b6b164b146101c55780635c6a541a146101da57806368f237a1146101fb5780638cb5953214610210578063a7e1f08b14610228578063c0e9e35e14610240578063c351d0a514610261578063cd60e21714610279578063db43826914610291578063e2b28158146102d0578063fcf503f8146102e5575b005b3480156100f357600080fd5b506100fc6102ed565b60408051918252519081900360200190f35b6100e560043567ffffffffffffffff60243581169060443590606435166084356102f3565b34801561013f57600080fd5b5061014b60043561067f565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561018757818101518382015260200161016f565b505050509050019250505060405180910390f35b3480156101a757600080fd5b506100fc6106ee565b3480156101bc57600080fd5b506100fc6106f4565b3480156101d157600080fd5b506100fc6106fa565b3480156101e657600080fd5b506100e5600160a060020a0360043516610700565b34801561020757600080fd5b506100fc610746565b34801561021c57600080fd5b506100e560043561074c565b34801561023457600080fd5b506100e5600435610768565b34801561024c57600080fd5b506100e5600160a060020a0360043516610784565b34801561026d57600080fd5b506100e56004356107ca565b34801561028557600080fd5b506100e56004356107fa565b34801561029d57600080fd5b506102b2600160a060020a0360043516610823565b60408051938452602084019290925282820152519081900360600190f35b3480156102dc57600080fd5b506100fc61084b565b6100e5610851565b60035481565b600a54604080517f3395492e00000000000000000000000000000000000000000000000000000000815267ffffffffffffffff808816600483015260248201879052851660448201526064810184905233608482015290516000928392600160a060020a0390911691633395492e9160a48082019260209290919082900301818787803b15801561038357600080fd5b505af1158015610397573d6000803e3d6000fd5b505050506040513d60208110156103ad57600080fd5b5051151561041c57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601960248201527f637075206f72206d656d6f7279206e6f74207061737365642e00000000000000604482015290519081900360640190fd5b600554871015801561043057506006548711155b151561049d57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f6e756d206f662063616d706169676e206f7574206f662072616e67652e000000604482015290519081900360640190fd5b6104a5610851565b336000818152600860205260409020549092501561054a57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603760248201527f706c6561736520776169746520756e74696c20796f7572206c61737420726f7560448201527f6e6420656e64656420616e642074727920616761696e2e000000000000000000606482015290519081900360840190fd5b600160a060020a0382166000908152600860205260409020879055600180546105789163ffffffff61097516565b600160a060020a03831660009081526008602052604090206001018190556105a6908863ffffffff61097516565b600160a060020a038316600090815260086020526040902060028101919091556001015490505b600160a060020a03821660009081526008602052604090206002015481101561061757600081815260096020526040902061060e908363ffffffff61098f16565b506001016105cd565b600160a060020a038216600081815260086020908152604091829020600181015460029091015483519485529184015282820152517f8d468194bdd18296bee5d126aa15cc492d26bdf22a0585c4a47ec4490d3a0fcf9181900360600190a150505050505050565b6000818152600960209081526040918290206001018054835181840281018401909452808452606093928301828280156106e257602002820191906000526020600020905b8154600160a060020a031681526001909101906020018083116106c4575b50505050509050919050565b60015481565b60055481565b60045481565b600054600160a060020a0316331461071757600080fd5b600b805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b60025481565b600054600160a060020a0316331461076357600080fd5b600655565b600054600160a060020a0316331461077f57600080fd5b600555565b600054600160a060020a0316331461079b57600080fd5b600a805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b600054600160a060020a031633146107e157600080fd5b60038190556002546107f4908290610a17565b60045550565b600054600160a060020a0316331461081157600080fd5b60028190556003546107f49082610a17565b600160a060020a03166000908152600860205260409020805460018201546002909201549092565b60065481565b600080600061085e610a42565b6001546007541061086e57610970565b6001546007541161097057600754600090815260096020526040812060010154935091505b828210156109625760075460009081526009602052604090206001018054839081106108bb57fe5b6000918252602080832090910154600160a060020a0316808352600890915260409091205490915015156108ee57610957565b600160a060020a038116600090815260086020526040902054610912906001610a73565b600160a060020a0382166000908152600860205260409020819055151561095757600160a060020a038116600090815260086020526040812060018101829055600201555b600190910190610893565b60078054600101905561086e565b505050565b60008282018381101561098457fe5b8091505b5092915050565b600160a060020a03811660009081526020839052604081205460ff16156109b857506000610a11565b50600160a060020a0381166000818152602084815260408220805460ff19166001908117909155858101805480830182559084529190922001805473ffffffffffffffffffffffffffffffffffffffff19169092179091555b92915050565b600080831515610a2a5760009150610988565b50828202828482811515610a3a57fe5b041461098457fe5b43801515610a54576000600155610a70565b600454610a6c9060001983019063ffffffff610a8516565b6001555b50565b600082821115610a7f57fe5b50900390565b6000808284811515610a9357fe5b049493505050505600a165627a7a72305820e969c1aef51b8d7dedb1d61b7aac3d6eb13c6e761b85b36ac06c19ff5c0adcb50029`
+const CampaignBin = `0x608060405260006001556003600255600c600355600254600354026004556001600555600a600655600a600755600160085534801561003d57600080fd5b50604051604080610c1383398101604052805160209091015160008054600160a060020a03199081163317909155600b8054600160a060020a03948516908316179055600c8054939092169216919091179055610b748061009f6000396000f3006080604052600436106101065763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166314b5980e811461010b5780631984ab0014610132578063350cc7241461019a57806335805726146101d15780633a713e37146101e65780634b6b164b146101fb57806368f237a1146102105780637dd604d6146102255780638cb595321461023d578063a7e1f08b14610255578063a9d1de481461026d578063c0e9e35e14610282578063c351d0a5146102a3578063cd60e217146102bb578063d5601e9f146102d3578063dae49ab2146102e8578063db43826914610300578063e2b281581461033f578063f2aaabdd14610354575b600080fd5b34801561011757600080fd5b50610120610375565b60408051918252519081900360200190f35b34801561013e57600080fd5b5061014a60043561037b565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561018657818101518382015260200161016e565b505050509050019250505060405180910390f35b3480156101a657600080fd5b506101cf60043567ffffffffffffffff602435811690604435906064351660843560a4356103e7565b005b3480156101dd57600080fd5b506101206108f6565b3480156101f257600080fd5b506101206108fc565b34801561020757600080fd5b50610120610902565b34801561021c57600080fd5b50610120610908565b34801561023157600080fd5b506101cf60043561090e565b34801561024957600080fd5b506101cf60043561092a565b34801561026157600080fd5b506101cf600435610946565b34801561027957600080fd5b50610120610962565b34801561028e57600080fd5b506101cf600160a060020a0360043516610968565b3480156102af57600080fd5b506101cf6004356109ae565b3480156102c757600080fd5b506101cf6004356109de565b3480156102df57600080fd5b50610120610a07565b3480156102f457600080fd5b506101cf600435610a0d565b34801561030c57600080fd5b50610321600160a060020a0360043516610a29565b60408051938452602084019290925282820152519081900360600190f35b34801561034b57600080fd5b50610120610a51565b34801561036057600080fd5b506101cf600160a060020a0360043516610a57565b60035481565b6000818152600a60209081526040918290208054835181840281018401909452808452606093928301828280156103db57602002820191906000526020600020905b8154600160a060020a031681526001909101906020018083116103bd575b50505050509050919050565b6000806103f2610a9d565b60085483101561040157600080fd5b60075443111561044c5760075461041f90439063ffffffff610ada16565b8610158015610441575060075461043d90439063ffffffff610ada16565b8410155b151561044c57600080fd5b600c54604080517fa8f076970000000000000000000000000000000000000000000000000000000081523360048201529051600160a060020a039092169163a8f07697916024808201926020929091908290030181600087803b1580156104b257600080fd5b505af11580156104c6573d6000803e3d6000fd5b505050506040513d60208110156104dc57600080fd5b50511515600114610537576040805160e560020a62461bcd02815260206004820152601260248201527f6e6f7420524e6f646520627920726e6f64650000000000000000000000000000604482015290519081900360640190fd5b600b54604080517f3395492e00000000000000000000000000000000000000000000000000000000815267ffffffffffffffff808b166004830152602482018a905288166044820152606481018790523360848201529051600160a060020a0390921691633395492e9160a4808201926020929091908290030181600087803b1580156105c357600080fd5b505af11580156105d7573d6000803e3d6000fd5b505050506040513d60208110156105ed57600080fd5b50511515610645576040805160e560020a62461bcd02815260206004820152601960248201527f637075206f72206d656d6f7279206e6f74207061737365642e00000000000000604482015290519081900360640190fd5b600554881015801561065957506006548811155b15156106af576040805160e560020a62461bcd02815260206004820152601d60248201527f6e756d206f662063616d706169676e206f7574206f662072616e67652e000000604482015290519081900360640190fd5b600154336000818152600960205260409020600201549093501115610744576040805160e560020a62461bcd02815260206004820152603760248201527f706c6561736520776169746520756e74696c20796f7572206c61737420726f7560448201527f6e6420656e64656420616e642074727920616761696e2e000000000000000000606482015290519081900360840190fd5b600160a060020a03821660009081526009602052604090205461076d908963ffffffff610aec16565b600160a060020a038316600090815260096020526040902055600180546107999163ffffffff610aec16565b600160a060020a03831660009081526009602052604090206001908101919091556107f7906107cf908a9063ffffffff610ada16565b600160a060020a0384166000908152600960205260409020600101549063ffffffff610aec16565b600160a060020a038316600090815260096020526040902060028101919091556001015490505b600160a060020a038216600090815260096020526040902060020154811161088d576000818152600a6020908152604082208054600180820183559184529190922001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0385161790550161081e565b600160a060020a038216600081815260096020908152604091829020600181015460029091015483519485529184015282820152517f8d468194bdd18296bee5d126aa15cc492d26bdf22a0585c4a47ec4490d3a0fcf9181900360600190a15050505050505050565b60015481565b60055481565b60045481565b60025481565b600054600160a060020a0316331461092557600080fd5b600855565b600054600160a060020a0316331461094157600080fd5b600655565b600054600160a060020a0316331461095d57600080fd5b600555565b60075481565b600054600160a060020a0316331461097f57600080fd5b600b805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b600054600160a060020a031633146109c557600080fd5b60038190556002546109d8908290610b06565b60045550565b600054600160a060020a031633146109f557600080fd5b60028190556003546109d89082610b06565b60085481565b600054600160a060020a03163314610a2457600080fd5b600755565b600160a060020a03166000908152600960205260409020805460018201546002909201549092565b60065481565b600054600160a060020a03163314610a6e57600080fd5b600c805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0392909216919091179055565b43801515610aaf576000600155610ad7565b600454610ad390610ac783600163ffffffff610ada16565b9063ffffffff610b3116565b6001555b50565b600082821115610ae657fe5b50900390565b600082820183811015610afb57fe5b8091505b5092915050565b600080831515610b195760009150610aff565b50828202828482811515610b2957fe5b0414610afb57fe5b6000808284811515610b3f57fe5b049493505050505600a165627a7a72305820278b5efa4ce8b0c75e3c6cde06ed93fa1455b15d6f02abc2d0369877b7863d250029`
 
 // DeployCampaign deploys a new cpchain contract, binding an instance of Campaign to it.
-func DeployCampaign(auth *bind.TransactOpts, backend bind.ContractBackend, _admissionAddr common.Address, _rewardAddr common.Address) (common.Address, *types.Transaction, *Campaign, error) {
+func DeployCampaign(auth *bind.TransactOpts, backend bind.ContractBackend, _admissionAddr common.Address, _rnodeAddr common.Address) (common.Address, *types.Transaction, *Campaign, error) {
 	parsed, err := abi.JSON(strings.NewReader(CampaignABI))
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
-	address, tx, contract, err := bind.DeployContract(auth, parsed, common.FromHex(CampaignBin), backend, _admissionAddr, _rewardAddr)
+	address, tx, contract, err := bind.DeployContract(auth, parsed, common.FromHex(CampaignBin), backend, _admissionAddr, _rnodeAddr)
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
@@ -363,6 +363,32 @@ func (_Campaign *CampaignTransactorRaw) Transact(opts *bind.TransactOpts, method
 	return _Campaign.Contract.contract.Transact(opts, method, params...)
 }
 
+// AcceptableBlocks is a free data retrieval call binding the contract method 0xa9d1de48.
+//
+// Solidity: function acceptableBlocks() constant returns(uint256)
+func (_Campaign *CampaignCaller) AcceptableBlocks(opts *bind.CallOpts) (*big.Int, error) {
+	var (
+		ret0 = new(*big.Int)
+	)
+	out := ret0
+	err := _Campaign.contract.Call(opts, out, "acceptableBlocks")
+	return *ret0, err
+}
+
+// AcceptableBlocks is a free data retrieval call binding the contract method 0xa9d1de48.
+//
+// Solidity: function acceptableBlocks() constant returns(uint256)
+func (_Campaign *CampaignSession) AcceptableBlocks() (*big.Int, error) {
+	return _Campaign.Contract.AcceptableBlocks(&_Campaign.CallOpts)
+}
+
+// AcceptableBlocks is a free data retrieval call binding the contract method 0xa9d1de48.
+//
+// Solidity: function acceptableBlocks() constant returns(uint256)
+func (_Campaign *CampaignCallerSession) AcceptableBlocks() (*big.Int, error) {
+	return _Campaign.Contract.AcceptableBlocks(&_Campaign.CallOpts)
+}
+
 // CandidateInfoOf is a free data retrieval call binding the contract method 0xdb438269.
 //
 // Solidity: function candidateInfoOf(_candidate address) constant returns(uint256, uint256, uint256)
@@ -499,6 +525,32 @@ func (_Campaign *CampaignCallerSession) NumPerRound() (*big.Int, error) {
 	return _Campaign.Contract.NumPerRound(&_Campaign.CallOpts)
 }
 
+// SupportedVersion is a free data retrieval call binding the contract method 0xd5601e9f.
+//
+// Solidity: function supportedVersion() constant returns(uint256)
+func (_Campaign *CampaignCaller) SupportedVersion(opts *bind.CallOpts) (*big.Int, error) {
+	var (
+		ret0 = new(*big.Int)
+	)
+	out := ret0
+	err := _Campaign.contract.Call(opts, out, "supportedVersion")
+	return *ret0, err
+}
+
+// SupportedVersion is a free data retrieval call binding the contract method 0xd5601e9f.
+//
+// Solidity: function supportedVersion() constant returns(uint256)
+func (_Campaign *CampaignSession) SupportedVersion() (*big.Int, error) {
+	return _Campaign.Contract.SupportedVersion(&_Campaign.CallOpts)
+}
+
+// SupportedVersion is a free data retrieval call binding the contract method 0xd5601e9f.
+//
+// Solidity: function supportedVersion() constant returns(uint256)
+func (_Campaign *CampaignCallerSession) SupportedVersion() (*big.Int, error) {
+	return _Campaign.Contract.SupportedVersion(&_Campaign.CallOpts)
+}
+
 // TermIdx is a free data retrieval call binding the contract method 0x35805726.
 //
 // Solidity: function termIdx() constant returns(uint256)
@@ -577,25 +629,25 @@ func (_Campaign *CampaignCallerSession) ViewLen() (*big.Int, error) {
 	return _Campaign.Contract.ViewLen(&_Campaign.CallOpts)
 }
 
-// ClaimCampaign is a paid mutator transaction binding the contract method 0x14b90a02.
+// ClaimCampaign is a paid mutator transaction binding the contract method 0x350cc724.
 //
-// Solidity: function claimCampaign(_numOfCampaign uint256, _cpuNonce uint64, _cpuBlockNumber uint256, _memoryNonce uint64, _memoryBlockNumber uint256) returns()
-func (_Campaign *CampaignTransactor) ClaimCampaign(opts *bind.TransactOpts, _numOfCampaign *big.Int, _cpuNonce uint64, _cpuBlockNumber *big.Int, _memoryNonce uint64, _memoryBlockNumber *big.Int) (*types.Transaction, error) {
-	return _Campaign.contract.Transact(opts, "claimCampaign", _numOfCampaign, _cpuNonce, _cpuBlockNumber, _memoryNonce, _memoryBlockNumber)
+// Solidity: function claimCampaign(_termsToCampaign uint256, _cpuNonce uint64, _cpuBlockNumber uint256, _memoryNonce uint64, _memoryBlockNumber uint256, version uint256) returns()
+func (_Campaign *CampaignTransactor) ClaimCampaign(opts *bind.TransactOpts, _termsToCampaign *big.Int, _cpuNonce uint64, _cpuBlockNumber *big.Int, _memoryNonce uint64, _memoryBlockNumber *big.Int, version *big.Int) (*types.Transaction, error) {
+	return _Campaign.contract.Transact(opts, "claimCampaign", _termsToCampaign, _cpuNonce, _cpuBlockNumber, _memoryNonce, _memoryBlockNumber, version)
 }
 
-// ClaimCampaign is a paid mutator transaction binding the contract method 0x14b90a02.
+// ClaimCampaign is a paid mutator transaction binding the contract method 0x350cc724.
 //
-// Solidity: function claimCampaign(_numOfCampaign uint256, _cpuNonce uint64, _cpuBlockNumber uint256, _memoryNonce uint64, _memoryBlockNumber uint256) returns()
-func (_Campaign *CampaignSession) ClaimCampaign(_numOfCampaign *big.Int, _cpuNonce uint64, _cpuBlockNumber *big.Int, _memoryNonce uint64, _memoryBlockNumber *big.Int) (*types.Transaction, error) {
-	return _Campaign.Contract.ClaimCampaign(&_Campaign.TransactOpts, _numOfCampaign, _cpuNonce, _cpuBlockNumber, _memoryNonce, _memoryBlockNumber)
+// Solidity: function claimCampaign(_termsToCampaign uint256, _cpuNonce uint64, _cpuBlockNumber uint256, _memoryNonce uint64, _memoryBlockNumber uint256, version uint256) returns()
+func (_Campaign *CampaignSession) ClaimCampaign(_termsToCampaign *big.Int, _cpuNonce uint64, _cpuBlockNumber *big.Int, _memoryNonce uint64, _memoryBlockNumber *big.Int, version *big.Int) (*types.Transaction, error) {
+	return _Campaign.Contract.ClaimCampaign(&_Campaign.TransactOpts, _termsToCampaign, _cpuNonce, _cpuBlockNumber, _memoryNonce, _memoryBlockNumber, version)
 }
 
-// ClaimCampaign is a paid mutator transaction binding the contract method 0x14b90a02.
+// ClaimCampaign is a paid mutator transaction binding the contract method 0x350cc724.
 //
-// Solidity: function claimCampaign(_numOfCampaign uint256, _cpuNonce uint64, _cpuBlockNumber uint256, _memoryNonce uint64, _memoryBlockNumber uint256) returns()
-func (_Campaign *CampaignTransactorSession) ClaimCampaign(_numOfCampaign *big.Int, _cpuNonce uint64, _cpuBlockNumber *big.Int, _memoryNonce uint64, _memoryBlockNumber *big.Int) (*types.Transaction, error) {
-	return _Campaign.Contract.ClaimCampaign(&_Campaign.TransactOpts, _numOfCampaign, _cpuNonce, _cpuBlockNumber, _memoryNonce, _memoryBlockNumber)
+// Solidity: function claimCampaign(_termsToCampaign uint256, _cpuNonce uint64, _cpuBlockNumber uint256, _memoryNonce uint64, _memoryBlockNumber uint256, version uint256) returns()
+func (_Campaign *CampaignTransactorSession) ClaimCampaign(_termsToCampaign *big.Int, _cpuNonce uint64, _cpuBlockNumber *big.Int, _memoryNonce uint64, _memoryBlockNumber *big.Int, version *big.Int) (*types.Transaction, error) {
+	return _Campaign.Contract.ClaimCampaign(&_Campaign.TransactOpts, _termsToCampaign, _cpuNonce, _cpuBlockNumber, _memoryNonce, _memoryBlockNumber, version)
 }
 
 // SetAdmissionAddr is a paid mutator transaction binding the contract method 0xc0e9e35e.
@@ -619,46 +671,46 @@ func (_Campaign *CampaignTransactorSession) SetAdmissionAddr(_addr common.Addres
 	return _Campaign.Contract.SetAdmissionAddr(&_Campaign.TransactOpts, _addr)
 }
 
-// SetRewardInterface is a paid mutator transaction binding the contract method 0x5c6a541a.
+// SetRnodeInterface is a paid mutator transaction binding the contract method 0xf2aaabdd.
 //
-// Solidity: function setRewardInterface(_addr address) returns()
-func (_Campaign *CampaignTransactor) SetRewardInterface(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
-	return _Campaign.contract.Transact(opts, "setRewardInterface", _addr)
+// Solidity: function setRnodeInterface(_addr address) returns()
+func (_Campaign *CampaignTransactor) SetRnodeInterface(opts *bind.TransactOpts, _addr common.Address) (*types.Transaction, error) {
+	return _Campaign.contract.Transact(opts, "setRnodeInterface", _addr)
 }
 
-// SetRewardInterface is a paid mutator transaction binding the contract method 0x5c6a541a.
+// SetRnodeInterface is a paid mutator transaction binding the contract method 0xf2aaabdd.
 //
-// Solidity: function setRewardInterface(_addr address) returns()
-func (_Campaign *CampaignSession) SetRewardInterface(_addr common.Address) (*types.Transaction, error) {
-	return _Campaign.Contract.SetRewardInterface(&_Campaign.TransactOpts, _addr)
+// Solidity: function setRnodeInterface(_addr address) returns()
+func (_Campaign *CampaignSession) SetRnodeInterface(_addr common.Address) (*types.Transaction, error) {
+	return _Campaign.Contract.SetRnodeInterface(&_Campaign.TransactOpts, _addr)
 }
 
-// SetRewardInterface is a paid mutator transaction binding the contract method 0x5c6a541a.
+// SetRnodeInterface is a paid mutator transaction binding the contract method 0xf2aaabdd.
 //
-// Solidity: function setRewardInterface(_addr address) returns()
-func (_Campaign *CampaignTransactorSession) SetRewardInterface(_addr common.Address) (*types.Transaction, error) {
-	return _Campaign.Contract.SetRewardInterface(&_Campaign.TransactOpts, _addr)
+// Solidity: function setRnodeInterface(_addr address) returns()
+func (_Campaign *CampaignTransactorSession) SetRnodeInterface(_addr common.Address) (*types.Transaction, error) {
+	return _Campaign.Contract.SetRnodeInterface(&_Campaign.TransactOpts, _addr)
 }
 
-// UpdateCandidateStatus is a paid mutator transaction binding the contract method 0xfcf503f8.
+// UpdateAcceptableBlocks is a paid mutator transaction binding the contract method 0xdae49ab2.
 //
-// Solidity: function updateCandidateStatus() returns()
-func (_Campaign *CampaignTransactor) UpdateCandidateStatus(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Campaign.contract.Transact(opts, "updateCandidateStatus")
+// Solidity: function updateAcceptableBlocks(_acceptableBlocks uint256) returns()
+func (_Campaign *CampaignTransactor) UpdateAcceptableBlocks(opts *bind.TransactOpts, _acceptableBlocks *big.Int) (*types.Transaction, error) {
+	return _Campaign.contract.Transact(opts, "updateAcceptableBlocks", _acceptableBlocks)
 }
 
-// UpdateCandidateStatus is a paid mutator transaction binding the contract method 0xfcf503f8.
+// UpdateAcceptableBlocks is a paid mutator transaction binding the contract method 0xdae49ab2.
 //
-// Solidity: function updateCandidateStatus() returns()
-func (_Campaign *CampaignSession) UpdateCandidateStatus() (*types.Transaction, error) {
-	return _Campaign.Contract.UpdateCandidateStatus(&_Campaign.TransactOpts)
+// Solidity: function updateAcceptableBlocks(_acceptableBlocks uint256) returns()
+func (_Campaign *CampaignSession) UpdateAcceptableBlocks(_acceptableBlocks *big.Int) (*types.Transaction, error) {
+	return _Campaign.Contract.UpdateAcceptableBlocks(&_Campaign.TransactOpts, _acceptableBlocks)
 }
 
-// UpdateCandidateStatus is a paid mutator transaction binding the contract method 0xfcf503f8.
+// UpdateAcceptableBlocks is a paid mutator transaction binding the contract method 0xdae49ab2.
 //
-// Solidity: function updateCandidateStatus() returns()
-func (_Campaign *CampaignTransactorSession) UpdateCandidateStatus() (*types.Transaction, error) {
-	return _Campaign.Contract.UpdateCandidateStatus(&_Campaign.TransactOpts)
+// Solidity: function updateAcceptableBlocks(_acceptableBlocks uint256) returns()
+func (_Campaign *CampaignTransactorSession) UpdateAcceptableBlocks(_acceptableBlocks *big.Int) (*types.Transaction, error) {
+	return _Campaign.Contract.UpdateAcceptableBlocks(&_Campaign.TransactOpts, _acceptableBlocks)
 }
 
 // UpdateMaxNoc is a paid mutator transaction binding the contract method 0x8cb59532.
@@ -701,6 +753,27 @@ func (_Campaign *CampaignSession) UpdateMinNoc(_minNoc *big.Int) (*types.Transac
 // Solidity: function updateMinNoc(_minNoc uint256) returns()
 func (_Campaign *CampaignTransactorSession) UpdateMinNoc(_minNoc *big.Int) (*types.Transaction, error) {
 	return _Campaign.Contract.UpdateMinNoc(&_Campaign.TransactOpts, _minNoc)
+}
+
+// UpdateSupportedVersion is a paid mutator transaction binding the contract method 0x7dd604d6.
+//
+// Solidity: function updateSupportedVersion(_supportedVersion uint256) returns()
+func (_Campaign *CampaignTransactor) UpdateSupportedVersion(opts *bind.TransactOpts, _supportedVersion *big.Int) (*types.Transaction, error) {
+	return _Campaign.contract.Transact(opts, "updateSupportedVersion", _supportedVersion)
+}
+
+// UpdateSupportedVersion is a paid mutator transaction binding the contract method 0x7dd604d6.
+//
+// Solidity: function updateSupportedVersion(_supportedVersion uint256) returns()
+func (_Campaign *CampaignSession) UpdateSupportedVersion(_supportedVersion *big.Int) (*types.Transaction, error) {
+	return _Campaign.Contract.UpdateSupportedVersion(&_Campaign.TransactOpts, _supportedVersion)
+}
+
+// UpdateSupportedVersion is a paid mutator transaction binding the contract method 0x7dd604d6.
+//
+// Solidity: function updateSupportedVersion(_supportedVersion uint256) returns()
+func (_Campaign *CampaignTransactorSession) UpdateSupportedVersion(_supportedVersion *big.Int) (*types.Transaction, error) {
+	return _Campaign.Contract.UpdateSupportedVersion(&_Campaign.TransactOpts, _supportedVersion)
 }
 
 // UpdateTermLen is a paid mutator transaction binding the contract method 0xc351d0a5.
@@ -869,367 +942,123 @@ func (_Campaign *CampaignFilterer) WatchClaimCampaign(opts *bind.WatchOpts, sink
 	}), nil
 }
 
-// CampaignQuitCampaignIterator is returned from FilterQuitCampaign and is used to iterate over the raw logs and unpacked data for QuitCampaign events raised by the Campaign contract.
-type CampaignQuitCampaignIterator struct {
-	Event *CampaignQuitCampaign // Event containing the contract specifics and raw log
+// RnodeInterfaceABI is the input ABI used to generate the binding from.
+const RnodeInterfaceABI = "[{\"constant\":true,\"inputs\":[{\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isRnode\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}]"
 
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
+// RnodeInterfaceBin is the compiled bytecode used for deploying new contracts.
+const RnodeInterfaceBin = `0x`
 
-	logs chan types.Log       // Log channel receiving the found contract events
-	sub  cpchain.Subscription // Subscription for errors, completion and termination
-	done bool                 // Whether the subscription completed delivering logs
-	fail error                // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *CampaignQuitCampaignIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(CampaignQuitCampaign)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(CampaignQuitCampaign)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *CampaignQuitCampaignIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *CampaignQuitCampaignIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// CampaignQuitCampaign represents a QuitCampaign event raised by the Campaign contract.
-type CampaignQuitCampaign struct {
-	Candidate common.Address
-	Payback   *big.Int
-	Raw       types.Log // Blockchain specific contextual infos
-}
-
-// FilterQuitCampaign is a free log retrieval operation binding the contract event 0x2fa4b892c3c1209cb29cf6b97ec72ea6159bbba59ac1f44932e801d1469fbec3.
-//
-// Solidity: e QuitCampaign(candidate address, payback uint256)
-func (_Campaign *CampaignFilterer) FilterQuitCampaign(opts *bind.FilterOpts) (*CampaignQuitCampaignIterator, error) {
-
-	logs, sub, err := _Campaign.contract.FilterLogs(opts, "QuitCampaign")
-	if err != nil {
-		return nil, err
-	}
-	return &CampaignQuitCampaignIterator{contract: _Campaign.contract, event: "QuitCampaign", logs: logs, sub: sub}, nil
-}
-
-// WatchQuitCampaign is a free log subscription operation binding the contract event 0x2fa4b892c3c1209cb29cf6b97ec72ea6159bbba59ac1f44932e801d1469fbec3.
-//
-// Solidity: e QuitCampaign(candidate address, payback uint256)
-func (_Campaign *CampaignFilterer) WatchQuitCampaign(opts *bind.WatchOpts, sink chan<- *CampaignQuitCampaign) (event.Subscription, error) {
-
-	logs, sub, err := _Campaign.contract.WatchLogs(opts, "QuitCampaign")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(CampaignQuitCampaign)
-				if err := _Campaign.contract.UnpackLog(event, "QuitCampaign", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// CampaignViewChangeIterator is returned from FilterViewChange and is used to iterate over the raw logs and unpacked data for ViewChange events raised by the Campaign contract.
-type CampaignViewChangeIterator struct {
-	Event *CampaignViewChange // Event containing the contract specifics and raw log
-
-	contract *bind.BoundContract // Generic contract to use for unpacking event data
-	event    string              // Event name to use for unpacking event data
-
-	logs chan types.Log       // Log channel receiving the found contract events
-	sub  cpchain.Subscription // Subscription for errors, completion and termination
-	done bool                 // Whether the subscription completed delivering logs
-	fail error                // Occurred error to stop iteration
-}
-
-// Next advances the iterator to the subsequent event, returning whether there
-// are any more events found. In case of a retrieval or parsing error, false is
-// returned and Error() can be queried for the exact failure.
-func (it *CampaignViewChangeIterator) Next() bool {
-	// If the iterator failed, stop iterating
-	if it.fail != nil {
-		return false
-	}
-	// If the iterator completed, deliver directly whatever's available
-	if it.done {
-		select {
-		case log := <-it.logs:
-			it.Event = new(CampaignViewChange)
-			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-				it.fail = err
-				return false
-			}
-			it.Event.Raw = log
-			return true
-
-		default:
-			return false
-		}
-	}
-	// Iterator still in progress, wait for either a data or an error event
-	select {
-	case log := <-it.logs:
-		it.Event = new(CampaignViewChange)
-		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
-			it.fail = err
-			return false
-		}
-		it.Event.Raw = log
-		return true
-
-	case err := <-it.sub.Err():
-		it.done = true
-		it.fail = err
-		return it.Next()
-	}
-}
-
-// Error returns any retrieval or parsing error occurred during filtering.
-func (it *CampaignViewChangeIterator) Error() error {
-	return it.fail
-}
-
-// Close terminates the iteration process, releasing any pending underlying
-// resources.
-func (it *CampaignViewChangeIterator) Close() error {
-	it.sub.Unsubscribe()
-	return nil
-}
-
-// CampaignViewChange represents a ViewChange event raised by the Campaign contract.
-type CampaignViewChange struct {
-	Raw types.Log // Blockchain specific contextual infos
-}
-
-// FilterViewChange is a free log retrieval operation binding the contract event 0xbeff1476fe7702a6f0dc32d7145dade82177da4a8728ed523e84f0af5c4585a9.
-//
-// Solidity: e ViewChange()
-func (_Campaign *CampaignFilterer) FilterViewChange(opts *bind.FilterOpts) (*CampaignViewChangeIterator, error) {
-
-	logs, sub, err := _Campaign.contract.FilterLogs(opts, "ViewChange")
-	if err != nil {
-		return nil, err
-	}
-	return &CampaignViewChangeIterator{contract: _Campaign.contract, event: "ViewChange", logs: logs, sub: sub}, nil
-}
-
-// WatchViewChange is a free log subscription operation binding the contract event 0xbeff1476fe7702a6f0dc32d7145dade82177da4a8728ed523e84f0af5c4585a9.
-//
-// Solidity: e ViewChange()
-func (_Campaign *CampaignFilterer) WatchViewChange(opts *bind.WatchOpts, sink chan<- *CampaignViewChange) (event.Subscription, error) {
-
-	logs, sub, err := _Campaign.contract.WatchLogs(opts, "ViewChange")
-	if err != nil {
-		return nil, err
-	}
-	return event.NewSubscription(func(quit <-chan struct{}) error {
-		defer sub.Unsubscribe()
-		for {
-			select {
-			case log := <-logs:
-				// New log arrived, parse the event and forward to the user
-				event := new(CampaignViewChange)
-				if err := _Campaign.contract.UnpackLog(event, "ViewChange", log); err != nil {
-					return err
-				}
-				event.Raw = log
-
-				select {
-				case sink <- event:
-				case err := <-sub.Err():
-					return err
-				case <-quit:
-					return nil
-				}
-			case err := <-sub.Err():
-				return err
-			case <-quit:
-				return nil
-			}
-		}
-	}), nil
-}
-
-// RewardInterfaceABI is the input ABI used to generate the binding from.
-const RewardInterfaceABI = "[{\"constant\":true,\"inputs\":[{\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isCandidate\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}]"
-
-// RewardInterfaceBin is the compiled bytecode used for deploying new contracts.
-const RewardInterfaceBin = `0x`
-
-// DeployRewardInterface deploys a new cpchain contract, binding an instance of RewardInterface to it.
-func DeployRewardInterface(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *RewardInterface, error) {
-	parsed, err := abi.JSON(strings.NewReader(RewardInterfaceABI))
+// DeployRnodeInterface deploys a new cpchain contract, binding an instance of RnodeInterface to it.
+func DeployRnodeInterface(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *RnodeInterface, error) {
+	parsed, err := abi.JSON(strings.NewReader(RnodeInterfaceABI))
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
-	address, tx, contract, err := bind.DeployContract(auth, parsed, common.FromHex(RewardInterfaceBin), backend)
+	address, tx, contract, err := bind.DeployContract(auth, parsed, common.FromHex(RnodeInterfaceBin), backend)
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
-	return address, tx, &RewardInterface{RewardInterfaceCaller: RewardInterfaceCaller{contract: contract}, RewardInterfaceTransactor: RewardInterfaceTransactor{contract: contract}, RewardInterfaceFilterer: RewardInterfaceFilterer{contract: contract}}, nil
+	return address, tx, &RnodeInterface{RnodeInterfaceCaller: RnodeInterfaceCaller{contract: contract}, RnodeInterfaceTransactor: RnodeInterfaceTransactor{contract: contract}, RnodeInterfaceFilterer: RnodeInterfaceFilterer{contract: contract}}, nil
 }
 
-// RewardInterface is an auto generated Go binding around an cpchain contract.
-type RewardInterface struct {
-	RewardInterfaceCaller     // Read-only binding to the contract
-	RewardInterfaceTransactor // Write-only binding to the contract
-	RewardInterfaceFilterer   // Log filterer for contract events
+// RnodeInterface is an auto generated Go binding around an cpchain contract.
+type RnodeInterface struct {
+	RnodeInterfaceCaller     // Read-only binding to the contract
+	RnodeInterfaceTransactor // Write-only binding to the contract
+	RnodeInterfaceFilterer   // Log filterer for contract events
 }
 
-// RewardInterfaceCaller is an auto generated read-only Go binding around an cpchain contract.
-type RewardInterfaceCaller struct {
+// RnodeInterfaceCaller is an auto generated read-only Go binding around an cpchain contract.
+type RnodeInterfaceCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// RewardInterfaceTransactor is an auto generated write-only Go binding around an cpchain contract.
-type RewardInterfaceTransactor struct {
+// RnodeInterfaceTransactor is an auto generated write-only Go binding around an cpchain contract.
+type RnodeInterfaceTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// RewardInterfaceFilterer is an auto generated log filtering Go binding around an cpchain contract events.
-type RewardInterfaceFilterer struct {
+// RnodeInterfaceFilterer is an auto generated log filtering Go binding around an cpchain contract events.
+type RnodeInterfaceFilterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// RewardInterfaceSession is an auto generated Go binding around an cpchain contract,
+// RnodeInterfaceSession is an auto generated Go binding around an cpchain contract,
 // with pre-set call and transact options.
-type RewardInterfaceSession struct {
-	Contract     *RewardInterface  // Generic contract binding to set the session for
+type RnodeInterfaceSession struct {
+	Contract     *RnodeInterface   // Generic contract binding to set the session for
 	CallOpts     bind.CallOpts     // Call options to use throughout this session
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// RewardInterfaceCallerSession is an auto generated read-only Go binding around an cpchain contract,
+// RnodeInterfaceCallerSession is an auto generated read-only Go binding around an cpchain contract,
 // with pre-set call options.
-type RewardInterfaceCallerSession struct {
-	Contract *RewardInterfaceCaller // Generic contract caller binding to set the session for
-	CallOpts bind.CallOpts          // Call options to use throughout this session
+type RnodeInterfaceCallerSession struct {
+	Contract *RnodeInterfaceCaller // Generic contract caller binding to set the session for
+	CallOpts bind.CallOpts         // Call options to use throughout this session
 }
 
-// RewardInterfaceTransactorSession is an auto generated write-only Go binding around an cpchain contract,
+// RnodeInterfaceTransactorSession is an auto generated write-only Go binding around an cpchain contract,
 // with pre-set transact options.
-type RewardInterfaceTransactorSession struct {
-	Contract     *RewardInterfaceTransactor // Generic contract transactor binding to set the session for
-	TransactOpts bind.TransactOpts          // Transaction auth options to use throughout this session
+type RnodeInterfaceTransactorSession struct {
+	Contract     *RnodeInterfaceTransactor // Generic contract transactor binding to set the session for
+	TransactOpts bind.TransactOpts         // Transaction auth options to use throughout this session
 }
 
-// RewardInterfaceRaw is an auto generated low-level Go binding around an cpchain contract.
-type RewardInterfaceRaw struct {
-	Contract *RewardInterface // Generic contract binding to access the raw methods on
+// RnodeInterfaceRaw is an auto generated low-level Go binding around an cpchain contract.
+type RnodeInterfaceRaw struct {
+	Contract *RnodeInterface // Generic contract binding to access the raw methods on
 }
 
-// RewardInterfaceCallerRaw is an auto generated low-level read-only Go binding around an cpchain contract.
-type RewardInterfaceCallerRaw struct {
-	Contract *RewardInterfaceCaller // Generic read-only contract binding to access the raw methods on
+// RnodeInterfaceCallerRaw is an auto generated low-level read-only Go binding around an cpchain contract.
+type RnodeInterfaceCallerRaw struct {
+	Contract *RnodeInterfaceCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// RewardInterfaceTransactorRaw is an auto generated low-level write-only Go binding around an cpchain contract.
-type RewardInterfaceTransactorRaw struct {
-	Contract *RewardInterfaceTransactor // Generic write-only contract binding to access the raw methods on
+// RnodeInterfaceTransactorRaw is an auto generated low-level write-only Go binding around an cpchain contract.
+type RnodeInterfaceTransactorRaw struct {
+	Contract *RnodeInterfaceTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewRewardInterface creates a new instance of RewardInterface, bound to a specific deployed contract.
-func NewRewardInterface(address common.Address, backend bind.ContractBackend) (*RewardInterface, error) {
-	contract, err := bindRewardInterface(address, backend, backend, backend)
+// NewRnodeInterface creates a new instance of RnodeInterface, bound to a specific deployed contract.
+func NewRnodeInterface(address common.Address, backend bind.ContractBackend) (*RnodeInterface, error) {
+	contract, err := bindRnodeInterface(address, backend, backend, backend)
 	if err != nil {
 		return nil, err
 	}
-	return &RewardInterface{RewardInterfaceCaller: RewardInterfaceCaller{contract: contract}, RewardInterfaceTransactor: RewardInterfaceTransactor{contract: contract}, RewardInterfaceFilterer: RewardInterfaceFilterer{contract: contract}}, nil
+	return &RnodeInterface{RnodeInterfaceCaller: RnodeInterfaceCaller{contract: contract}, RnodeInterfaceTransactor: RnodeInterfaceTransactor{contract: contract}, RnodeInterfaceFilterer: RnodeInterfaceFilterer{contract: contract}}, nil
 }
 
-// NewRewardInterfaceCaller creates a new read-only instance of RewardInterface, bound to a specific deployed contract.
-func NewRewardInterfaceCaller(address common.Address, caller bind.ContractCaller) (*RewardInterfaceCaller, error) {
-	contract, err := bindRewardInterface(address, caller, nil, nil)
+// NewRnodeInterfaceCaller creates a new read-only instance of RnodeInterface, bound to a specific deployed contract.
+func NewRnodeInterfaceCaller(address common.Address, caller bind.ContractCaller) (*RnodeInterfaceCaller, error) {
+	contract, err := bindRnodeInterface(address, caller, nil, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &RewardInterfaceCaller{contract: contract}, nil
+	return &RnodeInterfaceCaller{contract: contract}, nil
 }
 
-// NewRewardInterfaceTransactor creates a new write-only instance of RewardInterface, bound to a specific deployed contract.
-func NewRewardInterfaceTransactor(address common.Address, transactor bind.ContractTransactor) (*RewardInterfaceTransactor, error) {
-	contract, err := bindRewardInterface(address, nil, transactor, nil)
+// NewRnodeInterfaceTransactor creates a new write-only instance of RnodeInterface, bound to a specific deployed contract.
+func NewRnodeInterfaceTransactor(address common.Address, transactor bind.ContractTransactor) (*RnodeInterfaceTransactor, error) {
+	contract, err := bindRnodeInterface(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &RewardInterfaceTransactor{contract: contract}, nil
+	return &RnodeInterfaceTransactor{contract: contract}, nil
 }
 
-// NewRewardInterfaceFilterer creates a new log filterer instance of RewardInterface, bound to a specific deployed contract.
-func NewRewardInterfaceFilterer(address common.Address, filterer bind.ContractFilterer) (*RewardInterfaceFilterer, error) {
-	contract, err := bindRewardInterface(address, nil, nil, filterer)
+// NewRnodeInterfaceFilterer creates a new log filterer instance of RnodeInterface, bound to a specific deployed contract.
+func NewRnodeInterfaceFilterer(address common.Address, filterer bind.ContractFilterer) (*RnodeInterfaceFilterer, error) {
+	contract, err := bindRnodeInterface(address, nil, nil, filterer)
 	if err != nil {
 		return nil, err
 	}
-	return &RewardInterfaceFilterer{contract: contract}, nil
+	return &RnodeInterfaceFilterer{contract: contract}, nil
 }
 
-// bindRewardInterface binds a generic wrapper to an already deployed contract.
-func bindRewardInterface(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(RewardInterfaceABI))
+// bindRnodeInterface binds a generic wrapper to an already deployed contract.
+func bindRnodeInterface(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := abi.JSON(strings.NewReader(RnodeInterfaceABI))
 	if err != nil {
 		return nil, err
 	}
@@ -1240,71 +1069,71 @@ func bindRewardInterface(address common.Address, caller bind.ContractCaller, tra
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_RewardInterface *RewardInterfaceRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
-	return _RewardInterface.Contract.RewardInterfaceCaller.contract.Call(opts, result, method, params...)
+func (_RnodeInterface *RnodeInterfaceRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+	return _RnodeInterface.Contract.RnodeInterfaceCaller.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_RewardInterface *RewardInterfaceRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _RewardInterface.Contract.RewardInterfaceTransactor.contract.Transfer(opts)
+func (_RnodeInterface *RnodeInterfaceRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _RnodeInterface.Contract.RnodeInterfaceTransactor.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_RewardInterface *RewardInterfaceRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _RewardInterface.Contract.RewardInterfaceTransactor.contract.Transact(opts, method, params...)
+func (_RnodeInterface *RnodeInterfaceRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _RnodeInterface.Contract.RnodeInterfaceTransactor.contract.Transact(opts, method, params...)
 }
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_RewardInterface *RewardInterfaceCallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
-	return _RewardInterface.Contract.contract.Call(opts, result, method, params...)
+func (_RnodeInterface *RnodeInterfaceCallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
+	return _RnodeInterface.Contract.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_RewardInterface *RewardInterfaceTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _RewardInterface.Contract.contract.Transfer(opts)
+func (_RnodeInterface *RnodeInterfaceTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _RnodeInterface.Contract.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_RewardInterface *RewardInterfaceTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _RewardInterface.Contract.contract.Transact(opts, method, params...)
+func (_RnodeInterface *RnodeInterfaceTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _RnodeInterface.Contract.contract.Transact(opts, method, params...)
 }
 
-// IsCandidate is a free data retrieval call binding the contract method 0xd51b9e93.
+// IsRnode is a free data retrieval call binding the contract method 0xa8f07697.
 //
-// Solidity: function isCandidate(_addr address) constant returns(bool)
-func (_RewardInterface *RewardInterfaceCaller) IsCandidate(opts *bind.CallOpts, _addr common.Address) (bool, error) {
+// Solidity: function isRnode(_addr address) constant returns(bool)
+func (_RnodeInterface *RnodeInterfaceCaller) IsRnode(opts *bind.CallOpts, _addr common.Address) (bool, error) {
 	var (
 		ret0 = new(bool)
 	)
 	out := ret0
-	err := _RewardInterface.contract.Call(opts, out, "isCandidate", _addr)
+	err := _RnodeInterface.contract.Call(opts, out, "isRnode", _addr)
 	return *ret0, err
 }
 
-// IsCandidate is a free data retrieval call binding the contract method 0xd51b9e93.
+// IsRnode is a free data retrieval call binding the contract method 0xa8f07697.
 //
-// Solidity: function isCandidate(_addr address) constant returns(bool)
-func (_RewardInterface *RewardInterfaceSession) IsCandidate(_addr common.Address) (bool, error) {
-	return _RewardInterface.Contract.IsCandidate(&_RewardInterface.CallOpts, _addr)
+// Solidity: function isRnode(_addr address) constant returns(bool)
+func (_RnodeInterface *RnodeInterfaceSession) IsRnode(_addr common.Address) (bool, error) {
+	return _RnodeInterface.Contract.IsRnode(&_RnodeInterface.CallOpts, _addr)
 }
 
-// IsCandidate is a free data retrieval call binding the contract method 0xd51b9e93.
+// IsRnode is a free data retrieval call binding the contract method 0xa8f07697.
 //
-// Solidity: function isCandidate(_addr address) constant returns(bool)
-func (_RewardInterface *RewardInterfaceCallerSession) IsCandidate(_addr common.Address) (bool, error) {
-	return _RewardInterface.Contract.IsCandidate(&_RewardInterface.CallOpts, _addr)
+// Solidity: function isRnode(_addr address) constant returns(bool)
+func (_RnodeInterface *RnodeInterfaceCallerSession) IsRnode(_addr common.Address) (bool, error) {
+	return _RnodeInterface.Contract.IsRnode(&_RnodeInterface.CallOpts, _addr)
 }
 
 // SafeMathABI is the input ABI used to generate the binding from.
 const SafeMathABI = "[]"
 
 // SafeMathBin is the compiled bytecode used for deploying new contracts.
-const SafeMathBin = `0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a723058201b8caa1be5474007e468c99c8ab9b5a0478462f50dcef260063ab6a40b0f03a50029`
+const SafeMathBin = `0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a723058204fbe02d5361705dda8b0abae944f941a43b101856134a018becba4d3ff3edfa70029`
 
 // DeploySafeMath deploys a new cpchain contract, binding an instance of SafeMath to it.
 func DeploySafeMath(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *SafeMath, error) {
@@ -1459,165 +1288,4 @@ func (_SafeMath *SafeMathTransactorRaw) Transfer(opts *bind.TransactOpts) (*type
 // Transact invokes the (paid) contract method with params as input values.
 func (_SafeMath *SafeMathTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
 	return _SafeMath.Contract.contract.Transact(opts, method, params...)
-}
-
-// SetABI is the input ABI used to generate the binding from.
-const SetABI = "[]"
-
-// SetBin is the compiled bytecode used for deploying new contracts.
-const SetBin = `0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a723058206fd49004c5df1f8addb31ffa0262c5c9cf2790abf6d403a39f4b16397764a54c0029`
-
-// DeploySet deploys a new cpchain contract, binding an instance of Set to it.
-func DeploySet(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *Set, error) {
-	parsed, err := abi.JSON(strings.NewReader(SetABI))
-	if err != nil {
-		return common.Address{}, nil, nil, err
-	}
-	address, tx, contract, err := bind.DeployContract(auth, parsed, common.FromHex(SetBin), backend)
-	if err != nil {
-		return common.Address{}, nil, nil, err
-	}
-	return address, tx, &Set{SetCaller: SetCaller{contract: contract}, SetTransactor: SetTransactor{contract: contract}, SetFilterer: SetFilterer{contract: contract}}, nil
-}
-
-// Set is an auto generated Go binding around an cpchain contract.
-type Set struct {
-	SetCaller     // Read-only binding to the contract
-	SetTransactor // Write-only binding to the contract
-	SetFilterer   // Log filterer for contract events
-}
-
-// SetCaller is an auto generated read-only Go binding around an cpchain contract.
-type SetCaller struct {
-	contract *bind.BoundContract // Generic contract wrapper for the low level calls
-}
-
-// SetTransactor is an auto generated write-only Go binding around an cpchain contract.
-type SetTransactor struct {
-	contract *bind.BoundContract // Generic contract wrapper for the low level calls
-}
-
-// SetFilterer is an auto generated log filtering Go binding around an cpchain contract events.
-type SetFilterer struct {
-	contract *bind.BoundContract // Generic contract wrapper for the low level calls
-}
-
-// SetSession is an auto generated Go binding around an cpchain contract,
-// with pre-set call and transact options.
-type SetSession struct {
-	Contract     *Set              // Generic contract binding to set the session for
-	CallOpts     bind.CallOpts     // Call options to use throughout this session
-	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
-}
-
-// SetCallerSession is an auto generated read-only Go binding around an cpchain contract,
-// with pre-set call options.
-type SetCallerSession struct {
-	Contract *SetCaller    // Generic contract caller binding to set the session for
-	CallOpts bind.CallOpts // Call options to use throughout this session
-}
-
-// SetTransactorSession is an auto generated write-only Go binding around an cpchain contract,
-// with pre-set transact options.
-type SetTransactorSession struct {
-	Contract     *SetTransactor    // Generic contract transactor binding to set the session for
-	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
-}
-
-// SetRaw is an auto generated low-level Go binding around an cpchain contract.
-type SetRaw struct {
-	Contract *Set // Generic contract binding to access the raw methods on
-}
-
-// SetCallerRaw is an auto generated low-level read-only Go binding around an cpchain contract.
-type SetCallerRaw struct {
-	Contract *SetCaller // Generic read-only contract binding to access the raw methods on
-}
-
-// SetTransactorRaw is an auto generated low-level write-only Go binding around an cpchain contract.
-type SetTransactorRaw struct {
-	Contract *SetTransactor // Generic write-only contract binding to access the raw methods on
-}
-
-// NewSet creates a new instance of Set, bound to a specific deployed contract.
-func NewSet(address common.Address, backend bind.ContractBackend) (*Set, error) {
-	contract, err := bindSet(address, backend, backend, backend)
-	if err != nil {
-		return nil, err
-	}
-	return &Set{SetCaller: SetCaller{contract: contract}, SetTransactor: SetTransactor{contract: contract}, SetFilterer: SetFilterer{contract: contract}}, nil
-}
-
-// NewSetCaller creates a new read-only instance of Set, bound to a specific deployed contract.
-func NewSetCaller(address common.Address, caller bind.ContractCaller) (*SetCaller, error) {
-	contract, err := bindSet(address, caller, nil, nil)
-	if err != nil {
-		return nil, err
-	}
-	return &SetCaller{contract: contract}, nil
-}
-
-// NewSetTransactor creates a new write-only instance of Set, bound to a specific deployed contract.
-func NewSetTransactor(address common.Address, transactor bind.ContractTransactor) (*SetTransactor, error) {
-	contract, err := bindSet(address, nil, transactor, nil)
-	if err != nil {
-		return nil, err
-	}
-	return &SetTransactor{contract: contract}, nil
-}
-
-// NewSetFilterer creates a new log filterer instance of Set, bound to a specific deployed contract.
-func NewSetFilterer(address common.Address, filterer bind.ContractFilterer) (*SetFilterer, error) {
-	contract, err := bindSet(address, nil, nil, filterer)
-	if err != nil {
-		return nil, err
-	}
-	return &SetFilterer{contract: contract}, nil
-}
-
-// bindSet binds a generic wrapper to an already deployed contract.
-func bindSet(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := abi.JSON(strings.NewReader(SetABI))
-	if err != nil {
-		return nil, err
-	}
-	return bind.NewBoundContract(address, parsed, caller, transactor, filterer), nil
-}
-
-// Call invokes the (constant) contract method with params as input values and
-// sets the output to result. The result type might be a single field for simple
-// returns, a slice of interfaces for anonymous returns and a struct for named
-// returns.
-func (_Set *SetRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
-	return _Set.Contract.SetCaller.contract.Call(opts, result, method, params...)
-}
-
-// Transfer initiates a plain transaction to move funds to the contract, calling
-// its default method if one is available.
-func (_Set *SetRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Set.Contract.SetTransactor.contract.Transfer(opts)
-}
-
-// Transact invokes the (paid) contract method with params as input values.
-func (_Set *SetRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Set.Contract.SetTransactor.contract.Transact(opts, method, params...)
-}
-
-// Call invokes the (constant) contract method with params as input values and
-// sets the output to result. The result type might be a single field for simple
-// returns, a slice of interfaces for anonymous returns and a struct for named
-// returns.
-func (_Set *SetCallerRaw) Call(opts *bind.CallOpts, result interface{}, method string, params ...interface{}) error {
-	return _Set.Contract.contract.Call(opts, result, method, params...)
-}
-
-// Transfer initiates a plain transaction to move funds to the contract, calling
-// its default method if one is available.
-func (_Set *SetTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _Set.Contract.contract.Transfer(opts)
-}
-
-// Transact invokes the (paid) contract method with params as input values.
-func (_Set *SetTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _Set.Contract.contract.Transact(opts, method, params...)
 }
