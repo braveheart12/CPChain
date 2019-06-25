@@ -178,6 +178,10 @@ func (rc *RptCollectorImpl) RptOf(addr common.Address, addrs []common.Address, n
 	rpt := int64(0)
 	rpt = alpha*rc.BalanceValueOf(addr, addrs, num, windowSize) + beta*rc.TxsValueOf(addr, addrs, num, windowSize) + gamma*rc.MaintenanceValueOf(addr, addrs, num, windowSize) + psi*rc.UploadValueOf(addr, addrs, num, windowSize) + omega*rc.ProxyValueOf(addr, addrs, num, windowSize)
 
+	if rpt < defaultMinimumRptValue {
+		rpt = defaultMinimumRptValue
+	}
+
 	return Rpt{Address: addr, Rpt: rpt}
 }
 
@@ -326,11 +330,11 @@ func (rc *RptCollectorImpl) MaintenanceInfoOf(addr common.Address, addrs []commo
 // UploadInfoOf minor
 func (rc *RptCollectorImpl) UploadInfoOf(addr common.Address, addrs []common.Address, num uint64, windowSize int) int64 {
 	log.Debug("now calculating rpt", "UploadInfo", "new", "num", num, "addr", addr.Hex())
-	return 1
+	return 0
 }
 
 // ProxyInfoOf minor
 func (rc *RptCollectorImpl) ProxyInfoOf(addr common.Address, addrs []common.Address, num uint64, windowSize int) int64 {
 	log.Debug("now calculating rpt", "ProxyInfo", "new", "num", num, "addr", addr.Hex())
-	return 1
+	return 0
 }
