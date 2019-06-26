@@ -16,27 +16,27 @@ var (
 	mainnetProxyContractRegister = common.HexToAddress("0xd4826927aa2dba7930117782ed183576ccebed93")
 
 	MainnetContractAddressMap = map[string]common.Address{
-		ContractRpt:       common.HexToAddress("0x3fea6e441d9dbafb80f20333bd16d00e49179b33"),
-		ContractRnode:     common.HexToAddress("0x76dbca2ced6d81e2f26a6657b436d340bb924874"),
-		ContractAdmission: common.HexToAddress("0x45621603c070b051c0fc337294caa7b4a21a8b79"),
-		ContractCampaign:  common.HexToAddress("0x4e0ab103714c14d2e3b3a4d9d7355f6a01534242"),
-		ContractNetwork:   common.HexToAddress("0x951c57619ad1f7dcf2eb5f7078ee7264c9cf8ef8"),
+		ContractRpt:       common.HexToAddress("0x489902A7daF6F50a5BFd215c0143b6eF8033BacD"),
+		ContractRnode:     common.HexToAddress("0xe1b7Cb7337bD9B9519aAA647eAeA9DB47f336940"),
+		ContractAdmission: common.HexToAddress("0x2bead31638ED38C4891E78709735BaC559eA8E2A"),
+		ContractCampaign:  common.HexToAddress("0xFA3ae83D79b89F81d32D0C24b0e85afB49D96e92"),
+		ContractNetwork:   common.HexToAddress("0xEe29AA5a4Ae2930fEfA73795cA71Fb58D838A0dE"),
 	}
 
 	// config
 	mainnetDefaultCandidates = []common.Address{
-		common.HexToAddress("0x27c3500c8a493a152f1dfdec162c422b3678b03e"), // #1
-		common.HexToAddress("0xf285996f36aa76adf637c60f2005da637efd71aa"), // #2
-		common.HexToAddress("0x50bf9d407d8e30b8124f3711df97611d76d45699"), // #3
-		common.HexToAddress("0x99fc3138ff48a4fae3a0e65c6f83266a5284a683"), // #5
-		common.HexToAddress("0xf6f59e901b3cd551f1753dfe80ab806bb0046b30"), // #4
-		common.HexToAddress("0xa3a0fe044eb8ce1731ed99ca0901a795abf58da8"), // #6
-		common.HexToAddress("0x45f40e0c7135d86d92a88443a160045a2897436e"), // #14
-		common.HexToAddress("0x0005efc08c5ff71c3538ebc85b1bb93c377cef14"), // #15
-		common.HexToAddress("0x46ac4607b5334b5dc7cd671b0c11c5ffa81324f6"), // #16
-		common.HexToAddress("0x1573ce2ab9a0113d25ce5e7a74b564a02f9058ad"), // #17
-		common.HexToAddress("0x01cf3229840fc212d54df720cdae3e6d04320a9c"), // #18
-		common.HexToAddress("0xaa8ad61eb978bbde0b6f69d2cd3033755d8f9d04"), // #19
+		common.HexToAddress("0xbcbe2655e84e1f12717a70b34ae5c613a651c1ac"), // #1
+		common.HexToAddress("0xae6e61c3dea67294dc1a030f73b0500b7fe2d168"), // #2
+		common.HexToAddress("0x8f7013a77b50bd100b0ad018e7380a3038210f7c"), // #3
+		common.HexToAddress("0x9d82a4c51bc8461bdaf142d039e45f22aa7629f3"), // #4
+		common.HexToAddress("0x4b744613fb3cd4821588e511c93ef4e1739d0c0a"), // #5
+		common.HexToAddress("0xe535e99bc88bc738b36f8fdfe901b8309a88adb7"), // #6
+		common.HexToAddress("0x61185658e12ed22923b027ec8586e182690ef897"), // #14
+		common.HexToAddress("0x610a857dd2a676694545771eb23938f3474e2159"), // #15
+		common.HexToAddress("0x2a26c4bce965b56f6ba5c7fc5d4f187e64c2dcdb"), // #16
+		common.HexToAddress("0xb470a8d7fcb1105ae3d37400549d9caf7a942d96"), // #17
+		common.HexToAddress("0xa9f8d074c1de45e1e8378c971a5a4860dc0a17f0"), // #18
+		common.HexToAddress("0x4ab362d632b3758eca7da3b8b0c4db899e85010d"), // #19
 	}
 	mainnetChainConfig = &ChainConfig{
 		ChainID: big.NewInt(MainnetChainId),
@@ -54,28 +54,28 @@ var (
 	mainnetProposers = mainnetDefaultCandidates
 
 	mainnetValidators = []common.Address{
-		common.HexToAddress("0xbb0100151e0e6fde0a79f83f20b979f6453082b0"), //#7
-		common.HexToAddress("0x890f2f614f4ba5bcc1d8310aeb0e4e2891b49456"), //#8
-		common.HexToAddress("0x888ff37e1f16fdafae305db34a2b82b72efd4b13"), //#9
-		common.HexToAddress("0xbb8be04ca968670f9f690e98cc5d668c3631e42e"), //#10
-		common.HexToAddress("0x3e9612220d39026f5200ff28753f43dd967f09fd"), // #11
-		common.HexToAddress("0x1975ec9cd13de83530b29f2917c7f5c0c04f995c"), // #12
-		common.HexToAddress("0xa9c2f9e7ea9570046b0bccb3b6438b0153b79f16"), // #13
+		common.HexToAddress("0x40697d6b8d5d539ce4fb77fd1f01abcce35cf6a5"), //#7
+		common.HexToAddress("0x0a882b4ae83c8ca8af46711481b16ef96a504c7f"), //#8
+		common.HexToAddress("0xf7b5f0af95e3ac5620ac7c8328051b8f29c7736d"), //#9
+		common.HexToAddress("0x7554eae3ccea3d6fa22ed3bcee527f716c03a8f8"), //#10
+		common.HexToAddress("0x1fcbee2ac5c28f4a7ac934aa8535ae62cc123376"), // #11
+		common.HexToAddress("0x6e23821bb2493687f7b5a44cca3d256fae832bf9"), // #12
+		common.HexToAddress("0x14e5ffa43798ea835fcdaec057f4e864d5c9cc94"), // #13
 	}
 
 	mainnetBootnodes = []string{
-		"enode://249896cf064519e0eaa54f47a5dd5bcb5d24961b03d5a2ad170675b52f43c65ea9de9edaca1a2dcd2422145c0d2f29d0bcb96a7e9bc54469fabdc09d9f3745f6@b01.mainnet.cpc-servers.com:30310",
-		"enode://7ca533ed0bd212a92798c0a3eae59696bd7c20e62f4c44296b2ff7e19d93db6348519516955d562f94ca644b6b8f230e69a387163564845ad29301eca5e712a2@b02.mainnet.cpc-servers.com:30310",
-		"enode://95e9f0dca6694fd994865faa71444b7880b574f20fcd10373a2c710e4de747c622a826cffab7b7505e0f6501a0884e67bdc3282ec0f8b73ee07ae7281d05a041@b03.mainnet.cpc-servers.com:30310",
+		"enode://62c12325bc5e4f2b8e8be381df4d1b1f661d086c655e410f269e656ba7975e3e92da0864060ee120b0cae9bd739f223711a4a78887a3e6463ff1340cac74ab73@b01.mainnet.cpc-servers.com:30310",
+		"enode://1489be549547e50c51730221cd04d834a7b9cb5467d88e2f81d4b33bde343007dbcdc4d9bc75bc7d7a109d0838a7b8d3ac32a487c7e57a5fab066dd3909af31e@b02.mainnet.cpc-servers.com:30310",
+		"enode://8d075acb61149a506c3ff207c4831d71301af3d9667d43b0b9239af2b8bc42016b0ad919b348ef6a74df1007bc3b742283b0b5810f21d1af6f8c199f56480be8@b03.mainnet.cpc-servers.com:30310",
 	}
 
 	defaultMainnetValidatorNodes = []string{
-		"enode://ff705283b1fce33b378ec074971b50225eb59e98e3baa86f2c6f8cf45e0c634b63cd374a35b0ea9d32de99270c22852e94216b759d90e3c5f41dff9e38312a35@v01.mainnet.cpc-servers.com:30310",
-		"enode://687cad5b3374eb0eefc7c77b1997a553344c5b5c4d63bd7a73eb17fb0ef4de800f47dd2a75583b004ee7afbabad3b77795f866529a751cac8f34bde1536bdfcc@v02.mainnet.cpc-servers.com:30310",
-		"enode://de6402c71633fb740adc3caa792d2870bea35c888fec00038a8be8558dae2f999dc8451d6b92773dd1c967e9a34374f782eaa042e6ce2989d00082ed492fc4c4@v03.mainnet.cpc-servers.com:30310",
-		"enode://078cbb93e251732112fbbfa6059bb50f77dd20dbf3156ebfe66bc8f6fd70cab3aed2c94557079aa5f6ed40ab4fbd8585be5a7db49709c88aeb7e92697be788df@v04.mainnet.cpc-servers.com:30310",
-		"enode://3d46dff54508bb08e2e5a9856605ad7bc15b1646eeeba30a882c9352a1ea7cdfbea97993c7b984897856fda9ef154b276a8ed73fbac537fba00b2fe9f670096e@v05.mainnet.cpc-servers.com:30310",
-		"enode://33e4739bb516a475ea8c823d305c033c7f3e2fe18883ce5d50e4f1f7c5113bc9c97a38d2f6e95db6bd951cb568fdd42075df341d0da325de43496114110c953a@v06.mainnet.cpc-servers.com:30310",
-		"enode://1e19d838d202b08fba42a7f329a2b7c79bbd5442895858ea7e494ebfa452e1fad1e39abb70ab541560265692a3fb6a355bfbcbfadb08beea242aee9568bf5707@v07.mainnet.cpc-servers.com:30310",
+		"enode://b0fb401804d48d992733bcb01812698cf2da94790c9f15f69bffd7c5188ac1c7b214f0fa1d7896816199c6080acb93b9f50b4c50017b5d32a190478c8eca2600@v01.mainnet.cpc-servers.com:30310",
+		"enode://6033d60bf1daa21bf2a99f933bd1307fafb050d9a13268bb5a694d66632d5675926f953bf426f63065e376cf43f0ad9692e216bc2163f4a2dd17712e202d41c0@v02.mainnet.cpc-servers.com:30310",
+		"enode://aadf96c7b6172596275859ffd773a61e3bfa0668b5eb9cc4c5c647af35512f6ba528011c1760fa2e6af444cb591f9d300d11ea9864a39ce1c1c509199a9ff32f@v03.mainnet.cpc-servers.com:30310",
+		"enode://ddb02779aca4baa7348bc47069b5eb8e66a5249a9c63c91509472080f7aa35dd87afba1ce38902785f88e284f2216c547dde09090d372d0b84c0ad9220ef358b@v04.mainnet.cpc-servers.com:30310",
+		"enode://7e7057aa0faa6b17d70c1d84db6d592acbe342a0f9e8c3f79993cbce3ef8fd6051faf50f7066d22c71e96b32700ea9a2291a2107b14decf9a7a70a388fb447a4@v05.mainnet.cpc-servers.com:30310",
+		"enode://a07e2dbdef23b9f2565e288493c156b0c1cb3615b7b1c558b96a13658c059453e3c5efcf08458a04c4a95a18d0b17bfcbc23bba8b736b0c5c96d829ccc3a5d7e@v06.mainnet.cpc-servers.com:30310",
+		"enode://097cec8e68bbd1e3fa4aa928c8052cc4a1d54d62942cb73cd195f5ff91d86b59897465da4ae7114b78123674a7e3b417fa41dc86cea2df152db3474a9e9b7f2d@v07.mainnet.cpc-servers.com:30310",
 	}
 )

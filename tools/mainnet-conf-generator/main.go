@@ -10,7 +10,7 @@ import (
 
 func main() {
 
-	err := RunTemplate(temp.Config_mainnet, temp.Mc01)
+	err := RunTemplate(temp.Config_mainnet, temp.Mc02)
 	if err != nil {
 		fmt.Println("Template Failed!")
 	}
