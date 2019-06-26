@@ -1,8 +1,6 @@
 # CPChain Changelog
 
-## March 2019 Version 0.2.0 (Current)
-
-This release is not compatible with Mainnet Alpha (Version 0.1.0)
+## June 2019 Version 0.4
 
 Notable Changes
 
@@ -44,5 +42,3 @@ Notable Changes
     and [maintenance reward](https://docs.cpchain.io/overview/overview.html#maintenance-reward)
 - APIs
     - Adjusted and optimized RPC and Python APIs from [CPC fusion](https://github.com/CPChain/fusion)
-
-        
